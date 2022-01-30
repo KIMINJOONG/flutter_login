@@ -15,6 +15,13 @@ class CustomTextFormField extends StatelessWidget {
         Text("$text"),
         SizedBox(height: small_get),
         TextFormField(
+          validator: (value) {
+            if(value == null || value.isEmpty) {
+              return "Please enter some text";
+            } else {
+              return null;
+            }
+          },
           obscureText: text == "password",
           decoration: InputDecoration(
             hintText: "Enter $text",
