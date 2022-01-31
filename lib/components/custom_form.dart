@@ -18,7 +18,9 @@ class CustomForm extends StatelessWidget {
           SizedBox(height: large_get,),
           TextButton(
               onPressed: () {
-                _formKey.currentState!.validate();
+                if(_formKey.currentState!.validate()) {
+                  Navigator.pushNamed(context, "/home");
+                }
               },
               child: Text("Login"))
         ],
