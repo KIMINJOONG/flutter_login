@@ -7,10 +7,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Logo("Care soft"),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            SizedBox(height: 200,),
+            Logo("Care soft"),
+            SizedBox(height: 50,),
+            TextButton(onPressed: () {
+              Navigator.pop(context);
+            }, child: Text("Get Started"))
+          ],
+        ),
       )
     );
   }
