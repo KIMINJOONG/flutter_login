@@ -3,8 +3,9 @@ import 'package:flutter_login/size.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String text;
+  final mValide;
 
-  const CustomTextFormField({required this.text});
+  const CustomTextFormField({required this.text, required this.mValide});
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +16,7 @@ class CustomTextFormField extends StatelessWidget {
         Text("$text"),
         SizedBox(height: small_get),
         TextFormField(
-          validator: (value) {
-            if(value == null || value.isEmpty) {
-              return "Please enter some text";
-            } else {
-              return null;
-            }
-          },
+          validator: mValide,
           obscureText: text == "password",
           decoration: InputDecoration(
             hintText: "Enter $text",
